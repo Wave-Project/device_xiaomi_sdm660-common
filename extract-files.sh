@@ -99,7 +99,8 @@ function blob_fixup() {
         "$PATCHELF" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
         ;;
     product/etc/permissions/vendor.qti.hardware.data.connection-V1.{0,1}-java.xml)
-        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
+        sed -i 's/xml version="2.0"/xml version="1.0"/g' "${2}"
+        ;;
 
     esac
 }
